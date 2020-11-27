@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+</head>
+<script>
+    function convertMoney(){
+        let inMoney = parseInt(document.getElementById("inputMoney").value);
+        let fromCur = parseInt(document.getElementById("fromCurrency").value);
+        let toCur = parseInt(document.getElementById("toCurrency").value);
+        let result = document.getElementById("result").textContent;
+
+        if(fromCur !== toCur) {
+            document.getElementById("result").innerText = result + (inMoney * toCur / fromCur);
+        }else {
+            document.getElementById("result").innerText = (result + inMoney);
+        }
+
+    }
+</script>
+<style>
+
+    table {
+        border-collapse: collapse;
+    }
+
+    th,td {
+        border: 10px solid white;
+    }
+
+    h4{
+        margin: 0;
+    }
+
+</style>
+<body>
+<form>
+    <table>
+        <tr>
+            <th><label for="inputMoney">Amount</label></th>
+            <th><label for="fromCurrency">From Currency</label></th>
+            <th><label for="toCurrency">To Currency</label></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                <input id="inputMoney" type="number">
+            </td>
+            <td>
+                <select name="fromCurrency" id="fromCurrency">
+                    <option value="23175.50">VietNam</option>
+                    <option value="1">USD</option>
+                </select>
+            </td>
+            <td>
+                <select name="toCurrency" id="toCurrency">
+                    <option value="1">USD</option>
+                    <option value="23175.50">VietNam</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" onclick="convertMoney()">Convert</button>
+            </td>
+        </tr>
+    </table>
+    <h4 id="result">Result: </h4>
+</form>
+
+</body>
+</html>
