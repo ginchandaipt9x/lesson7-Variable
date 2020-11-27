@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện Tích Hình Tròn</title>
+</head>
+<body>
+<script>
+
+    function myF(){
+        let banKinh = prompt("Nhập bán kính đường tròn");
+
+        if ((banKinh) && banKinh != null) {
+
+            let sHinhTron = (3.14 * (banKinh * banKinh));
+
+            alert("Diện tích hình tròn là: " + sHinhTron);
+        } else {
+            alert("Đầu vào cần là một số!")
+        }
+    }
+
+</script>
+<button onclick="myF()">Tính diện tích hình tròn</button>
+</body>
+</html>
