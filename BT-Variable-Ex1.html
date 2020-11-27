@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điểm TB và Tổng 3 môn</title>
+</head>
+<body>
+<script>
+    function myF(){
+        let dVatLy = prompt("Nhập điểm Vật lý");
+        let dHoaHoc = prompt("Nhập điểm Hóa học");
+        let dSinhHoc = prompt("Nhập điểm Sinh học");
+
+            let tongDiem = parseInt(dVatLy) + parseInt(dHoaHoc) + parseInt(dSinhHoc);
+            let diemTrungbinh = tongDiem / 3;
+            alert("Tổng điểm: " + tongDiem + "\n" + "Điểm trung bình: " + diemTrungbinh);
+    }
+
+</script>
+<button onclick="myF()">Nhập điểm 3 môn để tính tổng và trung bình cộng</button>
+</body>
+</html>
