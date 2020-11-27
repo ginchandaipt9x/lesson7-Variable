@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi nhiệt dộ</title>
+</head>
+<body>
+<script>
+
+    function myF(){
+        let doC = prompt("Nhập nhiệt độ cần chuyển");
+
+        if (!isNaN(doC) && doC != null) {
+
+            let doF = 1.8 * parseInt(doC) +32;
+
+            alert(doC + "°C = " + doF + "°F");
+        } else {
+            alert("Đầu vào cần là một số!")
+        }
+    }
+
+</script>
+<button onclick="myF()">Đổi độ C sang độ F</button>
+</body>
+</html>
