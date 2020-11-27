@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chi vi hình tròn</title>
+</head>
+<body>
+<script>
+
+    function myF(){
+        let banKinh = prompt("Nhập bán kính đường tròn");
+
+        if (!isNaN(banKinh) && banKinh != null) {
+
+            let cHinhTron = (banKinh * 2 * 3.14);
+
+            alert("Chu vi hình tròn là: " + cHinhTron);
+        } else {
+            alert("Đầu vào cần là một số!")
+        }
+    }
+
+</script>
+<button onclick="myF()">Tính chu vi hình tròn</button>
+</body>
+</html>
