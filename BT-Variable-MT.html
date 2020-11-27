@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<style>
+
+    body {
+        font-family: "Segoe UI";
+    }
+
+    table {
+        border: 5px solid black;
+        table-layout: fixed;
+    }
+
+    #inputRow {
+        color: blue;
+        /*height: 45px;*/
+        padding: 0;
+        margin: 5px 0 5px 0;
+    }
+
+    th:not(#inputRow) {
+        padding: 0;
+        margin: 0   ;
+    }
+
+    button {
+        color: blue;
+        text-align: center;
+        font-size: 25px;
+        border: 2px solid gray;
+        width: 55px;
+        height: 40px;
+        margin: 10px 10px 5px 10px;
+    }
+
+    input {
+        font-family: "Segoe UI";
+        font-size: 25px;
+        text-align: right;
+        color: blue;
+        width: 95%;
+        box-sizing: border-box;
+        margin: 5px;
+    }
+
+
+</style>
+<body>
+<table>
+    <tr>
+        <th id="inputRow" colspan="4"><input type="text" id="result" placeholder="0"></th>
+    </tr>
+    <tr>
+        <th>
+            <button onclick="getInput('1')">1</button>
+        </th>
+        <th>
+            <button onclick="getInput('2')">2</button>
+        </th>
+        <th>
+            <button onclick="getInput('3')">3</button>
+        </th>
+        <th>
+            <button onclick="getInput('+')">+</button>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <button onclick="getInput('4')">4</button>
+        </th>
+        <th>
+            <button onclick="getInput('5')">5</button>
+        </th>
+        <th>
+            <button onclick="getInput('6')">6</button>
+        </th>
+        <th>
+            <button onclick="getInput('-')">-</button>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <button onclick="getInput('7')">7</button>
+        </th>
+        <th>
+            <button onclick="getInput('8')">8</button>
+        </th>
+        <th>
+            <button onclick="getInput('9')">9</button>
+        </th>
+        <th>
+            <button onclick="getInput('*')">x</button>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <button onclick="clearAll()">C</button>
+        </th>
+        <th>
+            <button onclick="getInput('0')">0</button>
+        </th>
+        <th>
+            <button onclick="getResult()">=</button>
+        </th>
+        <th>
+            <button onclick="getInput('/')">/</button>
+        </th>
+    </tr>
+</table>
+
+<script>
+
+    let isDone = 0;
+
+    function getInput(str) {
+        if (isDone == 1){
+            clearAll();
+            isDone = 0;
+        }
+        let input = document.getElementById('result');
+        input.style.color = 'RED';
+        let inputCr = input.value;
+
+        if ((str == "+" || str == "-" || str == "*" || str == "/") && (str == inputCr[inputCr.length - 1] || inputCr == "")) {
+            return ;
+        }
+        input.value = (inputCr + str);
+    }
+
+    function getResult(){
+        let input = document.getElementById('result');
+        let inputResult = input.value;
+        if (inputResult == ""){
+            return ;
+        }
+        input.value = eval(inputResult);
+        input.style.color = 'GREEN';
+        isDone = 1;
+    }
+
+    function clearAll(){
+        document.getElementById('result').value = "";
+    }
+</script>
+
+
+</body>
+</html>
